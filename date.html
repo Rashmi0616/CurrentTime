@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATE</title>
+    <!-- <link rel="stylesheet" href="a.css"> -->
+    <style>
+        body {
+    color: white;
+    height: 100%;
+    background-image:url('bg.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: 250px ;
+}
+.ct{
+    font-size: 35px;
+    color: pink;
+}
+#time{
+    font-size: 45px;
+   
+}
+#date{
+    font-size: 25px;
+}
+    </style>
+</head>
+<body>
+    <!-- <img src="bg.png" alt="img" id="bg"> -->
+   
+    <div class="ct">
+        Current Time & Date
+    </div>
+    
+    <span 
+         id="time" ></span>
+ 
+    <span id="date"></span>
+
+
+    
+    <script>
+        var today=new Date();
+        var hur= today.getHours();
+        var min=today.getMinutes();
+        var sec=today.getSeconds();
+        min=check(min);
+        sec=check(sec);
+        var date=today.getDate();
+        var month=today.getMonth() + 1;
+        var year=today.getFullYear();
+
+        document.getElementById('time').innerHTML=hur + ":" + min + ":" + sec +"<br>";
+        document.getElementById('date').innerHTML=date +":"+ month +":"+ year;
+       function check(i)
+       {
+        if(i<10)
+        {
+            i="0" +i;
+        }
+        return i;
+       }
+            </script>
+</body>
+</html>
