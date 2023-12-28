@@ -14,6 +14,7 @@
     background-size: cover;
     text-align: center;
     padding-top: 250px ;
+    margin-left: 200px;
 }
 .ct{
     font-size: 35px;
@@ -43,6 +44,8 @@
 
     
     <script>
+        window.onload=function(){getTime();}  
+        function getTime(){ 
         var today=new Date();
         var hur= today.getHours();
         var min=today.getMinutes();
@@ -54,7 +57,11 @@
         var year=today.getFullYear();
 
         document.getElementById('time').innerHTML=hur + ":" + min + ":" + sec +"<br>";
+       setTimeout(function(){getTime()},1000);  
+        
         document.getElementById('date').innerHTML=date +":"+ month +":"+ year;
+        }
+        //setInterval("getTime()",1000);//another way
        function check(i)
        {
         if(i<10)
